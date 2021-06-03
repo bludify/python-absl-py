@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:		python-absl-py
 Version:	0.10.0
-Release:	1
+Release:	2
 Summary:	Abseil Python Common Libraries, see https://github.com/abseil/abseil-py.
 License:	Apache 2.0
 URL:		https://github.com/abseil/abseil-py
@@ -249,11 +249,14 @@ mv %{buildroot}/filelist.lst .
 mv %{buildroot}/doclist.lst .
 
 %files -n python3-absl-py -f filelist.lst
-%dir %{python3_sitelib}/*
+%{python3_sitelib}/*
 
 %files help -f doclist.lst
 %{_docdir}/*
 
 %changelog
-* Sun Oct 04 2020 Python_Bot <Python_Bot@openeuler.org>
+* Wed Jun 02 2021 guoqinglan <guoqinglan@uniontech.com> - 0.10.0-2
+- clear out the __pycache__ folders after yum remove 
+
+* Sun Oct 04 2020 Python_Bot <Python_Bot@openeuler.org> - 0.10.0-1
 - Package Spec generated
